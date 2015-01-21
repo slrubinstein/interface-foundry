@@ -1,9 +1,19 @@
+body {
+	background-color: #eee !important;	
+}
+
 img {
 	float: right;
 	margin: 5px;
 	max-width: 50%;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #888;
 }
 
 li {
 	list-style-type: none;
+}
+
+.portrait {
+	float: left;
 }

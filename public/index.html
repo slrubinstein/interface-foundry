@@ -33,7 +33,9 @@
 								<img ng-src="{{video.thumbnail_large}}" />
 							</a>
 					<p class="description" ng-bind-html="video.description"></p>
-					<p><a ng-href="{{video.user_url}}">{{video.user_name}}</a></p>
+					<p><a ng-href="{{video.user_url}}">{{video.user_name}}
+						<img class="portrait" ng-src="{{video.user_portrait_medium}}" />
+					</a></p>
 				<div class="clearfix"></div>
 				<hr>
 				</div>
