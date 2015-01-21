@@ -1,0 +1,9 @@
+img {
+	float: right;
+	margin: 5px;
+	max-width: 50%;
+}
+
+li {
+	list-style-type: none;
+}
