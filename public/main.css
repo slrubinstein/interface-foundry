@@ -1,5 +1,5 @@
 body {
-	background-color: #eee !important;	
+	background-color: #ADF0FF !important;	
 }
 
 img {
@@ -16,4 +16,17 @@ li {
 
 .portrait {
 	float: left;
+}
+
+.box {
+	margin-bottom: 20px;
+	padding: 30px 15px;
+	background: rgba(255,255,255,0.9);
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px;
+	max-width: 98%;
+}
+
+.search-box {
+	max-width: 200px;
 }
