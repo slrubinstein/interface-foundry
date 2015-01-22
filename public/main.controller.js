@@ -13,15 +13,10 @@ function mainController($scope, dataService) {
 	vm.channel = 'staffpicks';
 
 	function search() {
-		dataService.get(vm.channel)
-			.then(function(response) {
-				if (typeof response.data === 'string') {
-					vm.msg = 'Not a valid channel';
-					vm.videos  =[];
-				} else {
-					vm.msg = vm.channel + '\'s videos:';
-					vm.videos = response.data;
-				}
+		var result = dataService.get(vm.channel)
+			.then(function(result) {
+				vm.msg = vm.channel + result.msg;
+				vm.videos = result.videos;
 			});
 	}
 }
