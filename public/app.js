@@ -1,1 +1,1 @@
-angular.module('vimeoApp', ['ngSanitize']);
+angular.module('vimeoApp', ['ngSanitize', 'ngAnimate']);
