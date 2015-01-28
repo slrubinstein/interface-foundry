@@ -20,7 +20,7 @@
 			<form>
 				<h2>Enter a Vimeo channel</h2>
 				<input class="form-control search-box" type="text" ng-model="vm.channel" />
-				<p>Search for videos in channel: {{ vm.channel }}</p>
+				<p>Search for videos in channel: {{vm.channel}}</p>
 				<input type="submit" class="btn btn-default" ng-click="vm.search()" />
 				<h4 ng-if="vm.msg">{{vm.msg}}</h4>
 			</form>
