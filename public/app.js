@@ -1,1 +1,1 @@
-angular.module('ifApp', ['ngSanitize', 'ngAnimate']);
+angular.module('ifApp', []);

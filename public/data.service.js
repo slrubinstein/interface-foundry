@@ -9,7 +9,7 @@ function dataService($http) {
 		get: get
 	}
 
-	function get(channel) {
-
+	function get() {
+		return $http.get('/bubbles');
 	}
 }

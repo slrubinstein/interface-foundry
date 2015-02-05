@@ -8,7 +8,7 @@ module.exports = function(app) {
 	});
 
 	app.get('/bubbles', function(req, res) {
-		res.json(bubbles);
+		res.json(bubbles.data);
 	});
 
 }

@@ -1,0 +1,12 @@
+.card {
+	background: rgba(255,255,255,0.9);
+	border: 1px solid #777;
+	border-radius: 5px;
+	box-shadow: 3px 3px 4px #aaa;
+	display: inline-block;
+	height: 200px;
+	margin: 20px;
+	padding: 0 20px 10px 20px;
+	width: 260px;
+	vertical-align: top;
+}
