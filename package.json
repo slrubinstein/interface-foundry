@@ -1,5 +1,5 @@
 {
-  "name": "vimeoApp",
+  "name": "ifApp",
   "version": "0.0.0",
   "description": "Vimeo code challenge",
   "main": "server.js",
