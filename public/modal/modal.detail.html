@@ -1,0 +1,17 @@
+<div class="modal fade" data-dismiss>
+
+  <div class="modal-content">
+    <div class="modal-body">
+      <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <span class="icon"
+          ng-class="{'triangle' : modal.card.subType === 'Lecture',
+          'circle' : modal.card.subType === 'Show',
+          'square' : modal.card.subType === 'Award Nominee'}"></span>
+      <h3>{{modal.card.name}}</h3>
+      <h4>{{modal.card.subType}}</h4>
+      <p>{{modal.card.description}}</p>
+
+    </div>
+  </div>
+
+</div>

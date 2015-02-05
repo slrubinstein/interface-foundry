@@ -1,19 +1,20 @@
 'use strict';
 
 angular.module('ifApp')
-	.controller('mainController', mainController);
+	.controller('MainController', MainController);
 
-mainController.$inject = ['dataService'];
+MainController.$inject = ['dataService', 'ModalService'];
 
-function mainController(dataService) {
+function MainController(dataService, ModalService) {
 
 	var vm = this;
 
 	vm.bubbles = [];
 	vm.stacks = [];
 	vm.groupByThrees = groupByThrees;
+	vm.modalOpen = false;
 	vm.reorder = reorder;
-	vm.test = 'angular';
+	vm.showDetailModal = showDetailModal;
 
 	activate();
 
@@ -43,5 +44,23 @@ function mainController(dataService) {
 		vm.stacks[index][card] = temp;
 	}
 
+	function showDetailModal(index) {
+		ModalService.showModal({
+			templateUrl: 'modal/modal.detail.html',
+			controller: 'ModalController',
+			controllerAs: 'modal',
+			inputs: {
+				card: vm.stacks[index].topCard
+			}
+		})
+		.then(function(modal) {
+			vm.modalOpen = true;
+			console.log('modal', modal)
+      modal.element.modal();
+			modal.close.then(function(result) {
+				vm.modalOpen = false;
+			});
+		});
+	}
 }
 

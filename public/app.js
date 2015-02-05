@@ -1,1 +1,1 @@
-angular.module('ifApp', []);
+angular.module('ifApp', ['angularModalService']);

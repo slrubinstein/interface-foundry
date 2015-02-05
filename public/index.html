@@ -4,29 +4,35 @@
 
 	<head>
 		<title>Interface Foundry</title>
+		<!-- local style sheet -->
 		<link rel="stylesheet" type="text/css" href="main.css">
+		<!-- vendor style sheet -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
+		<!-- vendor scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-sanitize.js"></script>
+		<script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+		<!-- local scripts -->
 		<script src="app.js"></script>
 		<script src="data.service.js"></script>
 		<script src="main.controller.js"></script>
+		<script src="modal/modal.controller.js"></script>
 	</head>
 
-	<body ng-controller="mainController as main">
-		<div class="container">
+	<body ng-controller="MainController as main">
+		<div class="container"
+				 >
 			<div ng-repeat="stack in main.stacks" class="inline">
-				<div class="card">
-					<span
+				<div class="card" ng-click="main.showDetailModal($index)">
+					<span class="icon"
 						ng-class="{'triangle' : stack.topCard.subType === 'Lecture',
 						'circle' : stack.topCard.subType === 'Show',
-						'square' : stack.topCard.subType === 'Award Nominee'}"
-						></span>
+						'square' : stack.topCard.subType === 'Award Nominee'}"></span>
 					<h4>{{stack.topCard.name}}</h4>
-
-
 					<h5>{{stack.topCard.subType}}</h5>
 					<p>{{stack.topCard.shortDescription}}</p>
 				</div>
