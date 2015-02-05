@@ -27,3 +27,33 @@
 	display: inline-block;
 	vertical-align: top;
 }
+
+.card span {
+	float: right;
+	margin-top: 16px;
+}
+
+.card h4 {
+	width: 80%;
+}
+
+.triangle {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 36px solid rgba(153, 153, 204, 0.5);
+}
+
+.circle {
+	width: 40px;
+	height: 40px;
+	background: rgba(255, 51, 51, 0.5);
+	border-radius: 50px;
+}
+
+.square {
+	width: 40px;
+	height: 40px;
+	background: rgba(51, 204, 51, 0.5);
+}

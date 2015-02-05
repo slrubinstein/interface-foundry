@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('ifApp')
 	.factory('dataService', dataService);
 

@@ -13,21 +13,29 @@
 		<script src="app.js"></script>
 		<script src="data.service.js"></script>
 		<script src="main.controller.js"></script>
+		<script src="shapes.directive.js"></script>
 	</head>
 
 	<body ng-controller="mainController as vm">
 		<div class="container">
 			<div ng-repeat="stack in vm.stacks" class="inline">
 				<div class="card">
-					<h3>{{stack.topCard.name}}</h3>
-					<h4>{{stack.topCard.subType}}</h4>
+					<span
+						ng-class="{'triangle' : stack.topCard.subType === 'Lecture',
+						'circle' : stack.topCard.subType === 'Show',
+						'square' : stack.topCard.subType === 'Award Nominee'}"
+						></span>
+					<h4>{{stack.topCard.name}}</h4>
+
+
+					<h5>{{stack.topCard.subType}}</h5>
 					<p>{{stack.topCard.shortDescription}}</p>
 				</div>
 				<div ng-if="stack.midCard" class="collapsed">
-					<h5>{{stack.midCard.name}}</h5>
+					<h6>{{stack.midCard.name}}</h6>
 				</div>
 				<div ng-if="stack.botCard" class="collapsed">
-					<h5>{{stack.botCard.name}}</h5>
+					<h6>{{stack.botCard.name}}</h6>
 				</div>
 			</div>
 		</div>
