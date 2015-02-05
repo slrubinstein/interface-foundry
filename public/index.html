@@ -13,18 +13,25 @@
 		<script src="app.js"></script>
 		<script src="data.service.js"></script>
 		<script src="main.controller.js"></script>
+		<script src="cardstack.directive.js"></script>
 	</head>
 
 	<body ng-controller="mainController as vm">
 		<div class="container">
 
-			<div class="card" ng-repeat="bubble in vm.bubbles">
+			<div cardstack class="card" ng-repeat="bubble in vm.bubbles | limitTo: 1">
 
 				<h3>{{bubble.name}}</h3>
 				<h4>{{bubble.subType}}</h4>
 				<p>{{bubble.shortDescription}}</p>
 
 			</div>
+				<div cardstack class="collapsed" ng-repeat="bubble in vm.bubbles | limitTo: 2">
+
+				<h5>{{bubble.name}}</h5>
+
+			</div>
+
 		</div>
 
 
