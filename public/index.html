@@ -13,12 +13,11 @@
 		<script src="app.js"></script>
 		<script src="data.service.js"></script>
 		<script src="main.controller.js"></script>
-		<script src="shapes.directive.js"></script>
 	</head>
 
-	<body ng-controller="mainController as vm">
+	<body ng-controller="mainController as main">
 		<div class="container">
-			<div ng-repeat="stack in vm.stacks" class="inline">
+			<div ng-repeat="stack in main.stacks" class="inline">
 				<div class="card">
 					<span
 						ng-class="{'triangle' : stack.topCard.subType === 'Lecture',
@@ -32,10 +31,10 @@
 					<p>{{stack.topCard.shortDescription}}</p>
 				</div>
 				<div ng-if="stack.midCard" class="collapsed">
-					<h6>{{stack.midCard.name}}</h6>
+					<h6 ng-click="main.reorder($index, 'midCard')">{{stack.midCard.name}}</h6>
 				</div>
 				<div ng-if="stack.botCard" class="collapsed">
-					<h6>{{stack.botCard.name}}</h6>
+					<h6 ng-click="main.reorder($index, 'botCard')">{{stack.botCard.name}}</h6>
 				</div>
 			</div>
 		</div>

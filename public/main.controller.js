@@ -12,6 +12,7 @@ function mainController(dataService) {
 	vm.bubbles = [];
 	vm.stacks = [];
 	vm.groupByThrees = groupByThrees;
+	vm.reorder = reorder;
 	vm.test = 'angular';
 
 	activate();
@@ -34,6 +35,12 @@ function mainController(dataService) {
 
 	function groupByThrees(index) {
 		return index % 3 === 0;
+	}
+
+	function reorder(index, card) {
+		var temp = vm.stacks[index].topCard;
+		vm.stacks[index].topCard = vm.stacks[index][card];
+		vm.stacks[index][card] = temp;
 	}
 
 }
