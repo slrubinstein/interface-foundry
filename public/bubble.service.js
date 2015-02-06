@@ -7,8 +7,8 @@ bubbleService.$inject = ['dataService', '$q', '$http'];
 
 function bubbleService(dataService, $q, $http) {
 	
-	var stacks = [];
-	var bubbles = [];
+	var stacks = [],
+			bubbles = [];
 
 	return {
 		bubbles: bubbles,
@@ -17,7 +17,7 @@ function bubbleService(dataService, $q, $http) {
 		reorderBubbles: reorderBubbles,
 		stackBubbles: stackBubbles,
 		stacks: stacks
-	}
+	};
 
 
 	function filterBubbles(type) {
@@ -47,7 +47,6 @@ function bubbleService(dataService, $q, $http) {
 		var temp = stacks[index].topCard;
 		stacks[index].topCard = stacks[index][card];
 		stacks[index][card] = temp;
-		// debugger
 		return stacks;
 	}
 
@@ -62,8 +61,6 @@ function bubbleService(dataService, $q, $http) {
 			}
 			workingStacks.push(stack)
 		}
-
 		return workingStacks;
 	}
-
 }

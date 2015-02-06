@@ -14,7 +14,6 @@ function MainController(dataService, bubbleService, $modal,
 	vm.bubbles = bubbleService.bubbles;
 	vm.filter = filter;
 	vm.groupByThrees = groupByThrees;
-	vm.modalOpen = false;
 	vm.reorder = reorder;
 	vm.showDetailModal = showDetailModal;
 	vm.stacks = [];
@@ -53,17 +52,6 @@ function MainController(dataService, bubbleService, $modal,
 				}
 			}
 		});
-
-		modalInstance.result.then(function(result) {
-
-		});
-	}
-
-	vm.show = function() {
-		console.log('ctrl bubbles', vm.bubbles)
-		console.log('factory bubbles', bubbleService.bubbles)
-		console.log('ctrl stacks', vm.stacks)
-		console.log('factory stacks', bubbleService.stacks)
 	}
 }
 

@@ -10,7 +10,7 @@ function mapService() {
 	return {
 		activate: activate,
 		createMap: createMap
-	}
+	};
 
 	function activate() {
 		L.mapbox.accessToken = 'pk.eyJ1Ijoic2xydWJpbnN0ZWluIiwiYSI6Im5LZE02b28ifQ.1ypnSdxZd_LH7UbpZeZERA';

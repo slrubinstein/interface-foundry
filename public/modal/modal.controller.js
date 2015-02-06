@@ -3,9 +3,9 @@
 angular.module('ifApp')
   .controller('ModalController', ModalController);
 
- ModalController.$inject = ['$modalInstance', 'card', 'mapService'];
+ ModalController.$inject = ['card', 'mapService'];
 
- function ModalController($modalInstance, card, mapService) {
+ function ModalController(card, mapService) {
 
   var vm = this;
 
@@ -16,5 +16,4 @@ angular.module('ifApp')
   }
 
 	mapService.createMap(vm.card.loc.coordinates);
-	
 }

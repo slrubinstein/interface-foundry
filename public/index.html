@@ -5,7 +5,7 @@
 	<head>
 		<title>Interface Foundry</title>
 		<!-- local style sheet -->
-		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 		<!-- vendor style sheet -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
@@ -53,13 +53,15 @@
 					<h5>{{stack.topCard.subType}}</h5>
 					<p>{{stack.topCard.shortDescription}}</p>
 				</div>
-				<div ng-click="main.reorder($index, 'midCard')" ng-if="stack.midCard" class="collapsed">
+				<div ng-if="stack.midCard" 
+						 ng-click="main.reorder($index, 'midCard')" 
+						 class="collapsed">
 					<h6 >{{stack.midCard.name}}</h6>
 				</div>
-				<div ng-click="main.reorder($index, 'botCard')" ng-if="stack.botCard" class="collapsed">
-					<span>
+				<div ng-if="stack.botCard"
+						 ng-click="main.reorder($index, 'botCard')" 
+						 class="collapsed">
 						<h6>{{stack.botCard.name}}</h6>
-					</span>
 				</div>
 			</div>
 		</div>
