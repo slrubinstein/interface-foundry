@@ -1,3 +1,6 @@
+@media (min-width: 650px) {
+  .my-container {
+    max-width: 900px; } }
 .card {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid #777;
@@ -70,13 +73,21 @@
   .my-container p, .my-container h4, .my-container h5, .my-container h6 {
     text-align: left; }
 
-@media (min-width: 650px) {
-  .my-container {
-    max-width: 900px; } }
 .container .icon {
   float: left;
   margin: 10px; }
   .container .icon:hover {
     cursor: pointer; }
+
+/* ANIMATION */
+.animate-repeat.ng-enter {
+  -webkit-transition: all linear .2s;
+  transition: all linear .2s; }
+
+.animate-repeat.ng-enter {
+  opacity: 0; }
+
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity: 1; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,1 +1,1 @@
-angular.module('ifApp', ['ui.bootstrap']);
+angular.module('ifApp', ['ui.bootstrap', 'ngAnimate']);

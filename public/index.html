@@ -15,7 +15,7 @@
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-sanitize.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.min.js"></script>
 		<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
 		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
@@ -40,11 +40,10 @@
 						ng-click="main.filter('Award Nominee')"></span>
 			<span class="icon" id="capital-a"
 						ng-click="main.filter('all')">A</span>
-			<button ng-click="main.show()">show bubbles</button>
 		</div>
 
 		<div class="my-container">
-			<div ng-repeat="stack in main.stacks" class="inline">
+			<div ng-repeat="stack in main.stacks" class="inline animate-repeat">
 				<div class="card" ng-click="main.showDetailModal($index)">
 					<span class="icon"
 						ng-class="{'triangle' : stack.topCard.subType === 'Lecture',
@@ -65,19 +64,6 @@
 		
 		<!-- include modal html -->
 		<modal></modal>
-		
-		<script type="text/javascript">
-
-		// L.mapbox.accessToken = 'pk.eyJ1Ijoic2xydWJpbnN0ZWluIiwiYSI6Im5LZE02b28ifQ.1ypnSdxZd_LH7UbpZeZERA';
-
-		// var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v4/slrubinstein.l56ffg3p/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
-		//     attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
-		// });
-
-
-
-
-			// var marker = L.marker([51.5, -0.09]).addTo(map);
-		</script>
+	
 	</body>
 </html>
