@@ -86,6 +86,9 @@
 #map {
   height: 360px; }
 
+.close {
+  float: right; }
+
 /****** MEDIA QUERY ******/
 @media (min-width: 650px) {
   .my-container {
