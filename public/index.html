@@ -20,12 +20,24 @@
 		<script src="app.js"></script>
 		<script src="data.service.js"></script>
 		<script src="main.controller.js"></script>
+		<script src="bubble.service.js"></script>
 		<script src="modal/modal.controller.js"></script>
 	</head>
 
 	<body ng-controller="MainController as main">
-		<div class="my-container"
-				 >
+		<div class="container">
+			<span class="triangle icon"
+						ng-click="main.filter('Lecture')"></span>
+			<span class="circle icon"
+						ng-click="main.filter('Show')"></span>
+			<span class="square icon"
+						ng-click="main.filter('Award Nominee')"></span>
+			<span class="icon" id="capital-a"
+						ng-click="main.filter('all')">A</span>
+			<button ng-click="main.show()">show bubbles</button>
+		</div>
+
+		<div class="my-container">
 			<div ng-repeat="stack in main.stacks" class="inline">
 				<div class="card" ng-click="main.showDetailModal($index)">
 					<span class="icon"

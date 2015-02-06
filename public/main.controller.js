@@ -3,35 +3,32 @@
 angular.module('ifApp')
 	.controller('MainController', MainController);
 
-MainController.$inject = ['dataService', 'ModalService'];
+MainController.$inject = ['dataService', 'ModalService', 'bubbleService'];
 
-function MainController(dataService, ModalService) {
+function MainController(dataService, ModalService, bubbleService) {
 
 	var vm = this;
 
-	vm.bubbles = [];
-	vm.stacks = [];
+	vm.bubbles = bubbleService.bubbles;
+	vm.filter = filter;
 	vm.groupByThrees = groupByThrees;
 	vm.modalOpen = false;
 	vm.reorder = reorder;
 	vm.showDetailModal = showDetailModal;
+	vm.stacks = [];
 
 	activate();
 
 	function activate() {
-		dataService.get().then(function(result) {
-			vm.bubbles = result.data;
+		bubbleService.getBubbles()
+			.then(function() {
+				vm.bubbles = bubbleService.bubbles;
+				vm.stacks = bubbleService.stacks;
+			});
+	}
 
-			while (vm.bubbles.length) {
-				var stack ={
-					topCard: vm.bubbles.shift(),
-					midCard: vm.bubbles.shift(),
-					botCard: vm.bubbles.shift()
-				}
-				vm.stacks.push(stack)
-			}
-			console.log(vm.stacks)
-		});
+	function filter(type) {
+		vm.stacks = bubbleService.filterBubbles(type);
 	}
 
 	function groupByThrees(index) {
@@ -39,9 +36,7 @@ function MainController(dataService, ModalService) {
 	}
 
 	function reorder(index, card) {
-		var temp = vm.stacks[index].topCard;
-		vm.stacks[index].topCard = vm.stacks[index][card];
-		vm.stacks[index][card] = temp;
+		vm.stacks = bubbleService.reorderBubbles(index, card);
 	}
 
 	function showDetailModal(index) {
@@ -50,7 +45,7 @@ function MainController(dataService, ModalService) {
 			controller: 'ModalController',
 			controllerAs: 'modal',
 			inputs: {
-				card: vm.stacks[index].topCard
+				card: bubbleService.stacks[index].topCard
 			}
 		})
 		.then(function(modal) {
@@ -61,6 +56,14 @@ function MainController(dataService, ModalService) {
 				vm.modalOpen = false;
 			});
 		});
+	}
+
+
+	vm.show = function() {
+		console.log('ctrl bubbles', vm.bubbles)
+		console.log('factory bubbles', bubbleService.bubbles)
+		console.log('ctrl stacks', vm.stacks)
+		console.log('factory stacks', bubbleService.stacks)
 	}
 }
 

@@ -16,6 +16,11 @@
   float: right;
   margin-top: 16px; }
 
+#capital-a {
+  font-size: 48px;
+  margin-top: -4px;
+  color: rgba(50, 50, 50, 0.5); }
+
 .collapsed {
   background: rgba(255, 255, 255, 0);
   border: 1px solid #777;
@@ -55,13 +60,13 @@
 
 .modal-content {
   top: 100px;
-  max-width: 80%;
+  max-width: 60%;
   margin-left: auto;
   margin-right: auto; }
 
-.modal-body {
-  box-shadow: 0px 50px 100px 132px rgba(10, 10, 10, 0.5); }
-
+/*.modal-body {
+	box-shadow: 0px 50px 100px 132px rgba(10, 10, 10, .5);
+}*/
 .my-container {
   padding-right: 15px;
   padding-left: 15px;
@@ -74,5 +79,10 @@
 @media (min-width: 650px) {
   .my-container {
     max-width: 900px; } }
+.container .icon {
+  float: left;
+  margin: 10px; }
+  .container .icon:hover {
+    cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */
