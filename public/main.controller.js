@@ -3,9 +3,9 @@
 angular.module('ifApp')
 	.controller('MainController', MainController);
 
-MainController.$inject = ['dataService', 'ModalService'];
+MainController.$inject = ['dataService', 'ModalService', 'mapService'];
 
-function MainController(dataService, ModalService) {
+function MainController(dataService, ModalService, mapService) {
 
 	var vm = this;
 
@@ -30,8 +30,8 @@ function MainController(dataService, ModalService) {
 				}
 				vm.stacks.push(stack)
 			}
-			console.log(vm.stacks)
 		});
+		// mapService.activate();
 	}
 
 	function groupByThrees(index) {
@@ -54,11 +54,10 @@ function MainController(dataService, ModalService) {
 			}
 		})
 		.then(function(modal) {
-			vm.modalOpen = true;
-			console.log('modal', modal)
+			// mapService.newMap(vm.stacks[index].topCard.loc.coordinates)
       modal.element.modal();
 			modal.close.then(function(result) {
-				vm.modalOpen = false;
+				// vm.modalOpen = false;
 			});
 		});
 	}

@@ -3,17 +3,19 @@
 angular.module('ifApp')
 	.controller('ModalController', ModalController);
 
-ModalController.$inject = ['$scope', 'close', 'card'];
+ModalController.$inject = ['$scope', 'close', 'card', 'mapService'];
 
-function ModalController($scope, close, card) {
+function ModalController($scope, close, card, mapService) {
 
 	var vm = this;
 
 	vm.card = card;
+	
 
 	$scope.close = function(result) {
-		console.log('closing')
- 		close(result, 500); // close, but give 500ms for bootstrap to animate
+ 		close(result, 500);
   };
+
+  // mapService.newMap(card.loc.coordinates)
 }
 
