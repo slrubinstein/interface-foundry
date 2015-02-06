@@ -1,7 +1,7 @@
 {
   "name": "ifApp",
   "version": "0.0.0",
-  "description": "Vimeo code challenge",
+  "description": "Interface Foundry code challenge",
   "main": "server.js",
   "author": "Steve Rubinstein",
   "dependencies": {
@@ -11,5 +11,8 @@
     "method-override": "~2.1.2",
     "morgan": "~1.2.2",
     "request": "^2.51.0"
+  },
+  "scripts": {
+    "postinstall": "bower install
   }
 }
