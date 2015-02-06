@@ -1,1 +1,1 @@
-angular.module('ifApp', ['angularModalService', 'ui.bootstrap']);
+angular.module('ifApp', ['ui.bootstrap']);

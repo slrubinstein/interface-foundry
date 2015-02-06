@@ -3,11 +3,9 @@
 angular.module('ifApp')
 	.controller('MainController', MainController);
 
-MainController.$inject = ['dataService', 'ModalService', 'bubbleService',
-													'$modal'];
+MainController.$inject = ['dataService', 'bubbleService', '$modal'];
 
-function MainController(dataService, ModalService, bubbleService,
-												$modal) {
+function MainController(dataService, bubbleService, $modal) {
 
 	var vm = this;
 
