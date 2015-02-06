@@ -90,6 +90,18 @@
 @media (min-width: 650px) {
   .my-container {
     max-width: 900px; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .my-container {
+    max-width: 480px; }
+
+  .container {
+    max-width: 480px; } }
+@media only screen and (max-width: 320px) {
+  .my-container {
+    max-width: 320px; }
+
+  .container {
+    max-width: 320px; } }
 /****** ANIMATION ******/
 .collapsed {
   -webkit-transition: all .2s ease;
