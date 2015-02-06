@@ -53,11 +53,13 @@
 					<h5>{{stack.topCard.subType}}</h5>
 					<p>{{stack.topCard.shortDescription}}</p>
 				</div>
-				<div ng-if="stack.midCard" class="collapsed">
-					<h6 ng-click="main.reorder($index, 'midCard')">{{stack.midCard.name}}</h6>
+				<div ng-click="main.reorder($index, 'midCard')" ng-if="stack.midCard" class="collapsed">
+					<h6 >{{stack.midCard.name}}</h6>
 				</div>
-				<div ng-if="stack.botCard" class="collapsed">
-					<h6 ng-click="main.reorder($index, 'botCard')">{{stack.botCard.name}}</h6>
+				<div ng-click="main.reorder($index, 'botCard')" ng-if="stack.botCard" class="collapsed">
+					<span>
+						<h6>{{stack.botCard.name}}</h6>
+					</span>
 				</div>
 			</div>
 		</div>
