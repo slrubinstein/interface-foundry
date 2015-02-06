@@ -3,9 +3,9 @@
 angular.module('ifApp')
   .controller('ModalController', ModalController);
 
- ModalController.$inject = ['$modalInstance', 'card'];
+ ModalController.$inject = ['$modalInstance', 'card', 'mapService'];
 
- function ModalController($modalInstance, card) {
+ function ModalController($modalInstance, card, mapService) {
 
   var vm = this;
 
@@ -14,4 +14,7 @@ angular.module('ifApp')
   if (typeof vm.card.tags === 'string') {
   	vm.card.tags = [vm.card.tags];
   }
+
+	mapService.createMap(vm.card.loc.coordinates);
+	
 }

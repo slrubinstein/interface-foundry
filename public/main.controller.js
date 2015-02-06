@@ -3,9 +3,11 @@
 angular.module('ifApp')
 	.controller('MainController', MainController);
 
-MainController.$inject = ['dataService', 'bubbleService', '$modal'];
+MainController.$inject = ['dataService', 'bubbleService', '$modal',
+													'mapService'];
 
-function MainController(dataService, bubbleService, $modal) {
+function MainController(dataService, bubbleService, $modal,
+												mapService) {
 
 	var vm = this;
 
@@ -25,6 +27,7 @@ function MainController(dataService, bubbleService, $modal) {
 				vm.bubbles = bubbleService.bubbles;
 				vm.stacks = bubbleService.stacks;
 			});
+		mapService.activate();
 	}
 
 	function filter(type) {
