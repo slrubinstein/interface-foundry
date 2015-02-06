@@ -48,7 +48,7 @@ function MainController(dataService, ModalService, bubbleService,
 			controllerAs: 'modal',
 			resolve: {
 				card: function() {
-					return bubbleService.stacks[index].topCard;
+					return vm.stacks[index].topCard;
 				}
 			}
 		});
@@ -57,34 +57,6 @@ function MainController(dataService, ModalService, bubbleService,
 
 		});
 	}
-
-// function editNote(listIndex, noteName, noteDescription, noteIndex) {
-//     var modalInstance = $modal.open({
-//       templateUrl: 'noteModal.html',
-//       resolve: {
-//         noteData: function() {
-//           var noteData = {
-//             noteName: noteName || '',
-//             noteDescription: noteDescription || '',
-//             listIndex: listIndex,
-//             noteIndex: noteIndex
-//           };
-//           return noteData;
-//         }
-//       },
-//       controller: 'ModalCtrl',
-//       controllerAs: 'modal',
-//     });
-
-//     modalInstance.result.then(function(result) {
-//       get();
-//     });
-//   }
-
-
-
-
-
 
 	vm.show = function() {
 		console.log('ctrl bubbles', vm.bubbles)
