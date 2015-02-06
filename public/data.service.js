@@ -12,9 +12,6 @@ function dataService($http) {
 	}
 
 	function get() {
-		// return $http.get('/bubbles');
-		$http.get('/bubbles').success(function(data) { 
-			console.log('success data', data)
-			return data })
+		return $http.get('/bubbles');
 	}
 }

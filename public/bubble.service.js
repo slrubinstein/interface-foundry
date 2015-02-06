@@ -35,7 +35,7 @@ function bubbleService(dataService, $q, $http) {
 	function getBubbles() {
 		var tempStacks;
 
-		return $http.get('/bubbles')
+		return dataService.get()
 	    .then(function (result) {
 	    	angular.copy(result.data, bubbles);
 	    	tempStacks = stackBubbles(bubbles);
