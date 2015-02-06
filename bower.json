@@ -16,6 +16,10 @@
     "tests"
   ],
   "dependencies": {
-    "angular-modal-service": "~0.6.0"
+    "angular-modal-service": "~0.6.0",
+    "angular-bootstrap": "~0.12.0"
+  },
+  "resolutions": {
+    "angular": "~1.3.x"
   }
 }

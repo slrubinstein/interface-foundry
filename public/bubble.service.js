@@ -7,7 +7,6 @@ bubbleService.$inject = ['dataService', '$q', '$http'];
 
 function bubbleService(dataService, $q, $http) {
 	
-	var self = this;
 	var stacks = [];
 	var bubbles = [];
 

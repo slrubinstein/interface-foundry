@@ -1,19 +1,17 @@
 'use strict';
 
 angular.module('ifApp')
-	.controller('ModalController', ModalController);
+  .controller('ModalController', ModalController);
 
-ModalController.$inject = ['$scope', 'close', 'card'];
+ ModalController.$inject = ['$modalInstance', 'card'];
 
-function ModalController($scope, close, card) {
+ function ModalController($modalInstance, card) {
 
-	var vm = this;
+  var vm = this;
 
-	vm.card = card;
+  vm.card = card;
 
-	$scope.close = function(result) {
-		console.log('closing')
- 		close(result, 500); // close, but give 500ms for bootstrap to animate
-  };
+  if (typeof vm.card.tags === 'string') {
+  	vm.card.tags = [vm.card.tags];
+  }
 }
-

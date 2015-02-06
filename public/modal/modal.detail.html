@@ -1,17 +1,16 @@
-<div class="modal fade" data-dismiss>
-
-  <div class="modal-content">
-    <div class="modal-body">
-      <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <span class="icon"
-          ng-class="{'triangle' : modal.card.subType === 'Lecture',
-          'circle' : modal.card.subType === 'Show',
-          'square' : modal.card.subType === 'Award Nominee'}"></span>
-      <h3>{{modal.card.name}}</h3>
-      <h4>{{modal.card.subType}}</h4>
-      <p>{{modal.card.description}}</p>
-
+<script type="text/ng-template" id="modal.detail.html">
+  <div class="modal-header">
+    <h3 class="modal-title">{{modal.card.name}}</h3>
+  </div>
+  <div class="modal-body">
+    <p>{{modal.card.description}}</p>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <button class="btn btn-default btn-sm"
+              ng-repeat="tag in modal.card.tags">
+        {{tag}}
+      </button>
     </div>
   </div>
-
-</div>
+</script>

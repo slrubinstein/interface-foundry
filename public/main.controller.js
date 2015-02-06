@@ -3,9 +3,11 @@
 angular.module('ifApp')
 	.controller('MainController', MainController);
 
-MainController.$inject = ['dataService', 'ModalService', 'bubbleService'];
+MainController.$inject = ['dataService', 'ModalService', 'bubbleService',
+													'$modal'];
 
-function MainController(dataService, ModalService, bubbleService) {
+function MainController(dataService, ModalService, bubbleService,
+												$modal) {
 
 	var vm = this;
 
@@ -40,23 +42,48 @@ function MainController(dataService, ModalService, bubbleService) {
 	}
 
 	function showDetailModal(index) {
-		ModalService.showModal({
-			templateUrl: 'modal/modal.detail.html',
+		var modalInstance = $modal.open({
+			templateUrl: 'modal.detail.html',
 			controller: 'ModalController',
 			controllerAs: 'modal',
-			inputs: {
-				card: bubbleService.stacks[index].topCard
+			resolve: {
+				card: function() {
+					return bubbleService.stacks[index].topCard;
+				}
 			}
-		})
-		.then(function(modal) {
-			vm.modalOpen = true;
-			console.log('modal', modal)
-      modal.element.modal();
-			modal.close.then(function(result) {
-				vm.modalOpen = false;
-			});
+		});
+
+		modalInstance.result.then(function(result) {
+
 		});
 	}
+
+// function editNote(listIndex, noteName, noteDescription, noteIndex) {
+//     var modalInstance = $modal.open({
+//       templateUrl: 'noteModal.html',
+//       resolve: {
+//         noteData: function() {
+//           var noteData = {
+//             noteName: noteName || '',
+//             noteDescription: noteDescription || '',
+//             listIndex: listIndex,
+//             noteIndex: noteIndex
+//           };
+//           return noteData;
+//         }
+//       },
+//       controller: 'ModalCtrl',
+//       controllerAs: 'modal',
+//     });
+
+//     modalInstance.result.then(function(result) {
+//       get();
+//     });
+//   }
+
+
+
+
 
 
 	vm.show = function() {

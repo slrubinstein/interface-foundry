@@ -16,12 +16,15 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-sanitize.js"></script>
 		<script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 		<!-- local scripts -->
 		<script src="app.js"></script>
 		<script src="data.service.js"></script>
 		<script src="main.controller.js"></script>
 		<script src="bubble.service.js"></script>
 		<script src="modal/modal.controller.js"></script>
+		<script src="modal/modal.directive.js"></script>
 	</head>
 
 	<body ng-controller="MainController as main">
@@ -36,6 +39,7 @@
 						ng-click="main.filter('all')">A</span>
 			<button ng-click="main.show()">show bubbles</button>
 		</div>
+		<modal>hello</modal>
 
 		<div class="my-container">
 			<div ng-repeat="stack in main.stacks" class="inline">
